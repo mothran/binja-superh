@@ -25,8 +25,7 @@ endif(CMAKE_BUILD_TYPE STREQUAL "Debug")
 set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
 
 
-
-
+# binaryninja-api
 FetchContent_Declare(
     binaryninja_api
     GIT_REPOSITORY  https://github.com/Vector35/binaryninja-api.git
@@ -35,6 +34,16 @@ FetchContent_Declare(
 message("Fetching binaryninja-api, please hold ....")
 FetchContent_MakeAvailable(binaryninja_api)
 
+# catch2
+FetchContent_Declare(
+  Catch2
+  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+  GIT_TAG        v2.13.1)
+FetchContent_MakeAvailable(Catch2)
+list(APPEND CMAKE_MODULE_PATH ${Catch2_SOURCE_DIR}/contrib)
+
+
+# Generated code
 find_program(PYTHON3_BIN NAMES python3)
 
 set(generated_code ${CMAKE_CURRENT_SOURCE_DIR}/src/disasm-gen.inc)
@@ -51,7 +60,7 @@ add_library(disasm_superh STATIC
     src/disasm.cpp
 )
 add_dependencies(disasm_superh gen-decoder)
-target_include_directories(disasm_superh PRIVATE
+target_include_directories(disasm_superh PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src/
 )
 target_link_libraries(disasm_superh PRIVATE
@@ -100,3 +109,8 @@ set_target_properties(arch_superh PROPERTIES
 # grouped target
 add_custom_target(sh-all)
 add_dependencies(sh-all arch_superh sh_disasm)
+
+
+# Testing
+enable_testing()
+add_subdirectory(test/)
