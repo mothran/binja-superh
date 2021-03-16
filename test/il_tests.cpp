@@ -87,3 +87,14 @@ TEST_CASE_METHOD(LLILTestsFixture, "sub (regs)", "[arithmetic]") {
     );
 }
 
+// Other
+
+TEST_CASE_METHOD(LLILTestsFixture, "delayslot - plt", "[other]") {
+    run_test(arch,
+        // jmp @R0
+        // mov R1, R0
+
+        {0x2b, 0x40, 0x13, 0x60},
+        "nop; R0 = R1; jump(R0); "
+    );
+}
