@@ -31,6 +31,7 @@ FetchContent_Declare(
     GIT_REPOSITORY  https://github.com/Vector35/binaryninja-api.git
     GIT_TAG         dev
 )
+set(HEADLESS TRUE) # disasble binja-ui
 message("Fetching binaryninja-api, please hold ....")
 FetchContent_MakeAvailable(binaryninja_api)
 
@@ -106,11 +107,10 @@ set_target_properties(arch_superh PROPERTIES
     POSITION_INDEPENDENT_CODE ON
 )
 
-# grouped target
-add_custom_target(sh-all)
-add_dependencies(sh-all arch_superh sh_disasm)
-
-
 # Testing
 enable_testing()
 add_subdirectory(test/)
+
+# grouped target
+add_custom_target(sh-all)
+add_dependencies(sh-all arch_superh sh_disasm il_tests)

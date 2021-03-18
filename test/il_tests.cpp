@@ -1,8 +1,6 @@
 #define CATCH_CONFIG_MAIN
 #include <cstdint>
 #include <iterator>
-#include <memory>
-#include <optional>
 
 #include <catch2/catch.hpp>
 
