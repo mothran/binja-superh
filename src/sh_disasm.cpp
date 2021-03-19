@@ -1,5 +1,9 @@
 #include <iostream>
 #include <cstdint>
+#include <cstdlib>
+#include <string>
+#include <utility>
+#include <vector>
 #include <optional>
 
 #include "disasm.h"

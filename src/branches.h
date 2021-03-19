@@ -1,6 +1,6 @@
 #pragma once
 
-#include "disasm.h"
-#include "binaryninjaapi.h"
+struct SHInsn;
+namespace BinaryNinja { struct InstructionInfo; }
 
 void find_branches(SHInsn &insn, BinaryNinja::InstructionInfo &result);

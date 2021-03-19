@@ -1,8 +1,13 @@
-#include <cstdint>
+#include <cstddef>
+#include <memory>
+#include <utility>
+#include <string>
 #include <vector>
+#include <cstdint>
 #include <algorithm>
 #include <optional>
 
+#include "binaryninjacore.h"
 #include "binaryninjaapi.h"
 #include "lowlevelilinstruction.h"
 

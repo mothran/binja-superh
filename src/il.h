@@ -1,7 +1,10 @@
 #pragma once
 
-#include "disasm.h"
-#include "binaryninjaapi.h"
+namespace BinaryNinja {
+    class Architecture;
+    class LowLevelILFunction;
+}
+struct SHInsn;
 
 enum SHFlagGroups {
     IL_FLAGWRITE_NONE = 0,

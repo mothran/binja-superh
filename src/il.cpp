@@ -1,5 +1,10 @@
+#include <cstdint>
+#include <memory>
+#include <vector>
+
 #include "disasm.h"
 #include "binaryninjaapi.h"
+#include "binaryninjacore.h"
 #include "il.h"
 
 using namespace BinaryNinja;

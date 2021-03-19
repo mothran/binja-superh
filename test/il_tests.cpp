@@ -1,11 +1,12 @@
 #define CATCH_CONFIG_MAIN
 #include <cstdint>
-#include <iterator>
+#include <cstddef>
+#include <string>
+#include <vector>
 
 #include <catch2/catch.hpp>
 
 #include "binaryninjaapi.h"
-#include "lowlevelilinstruction.h"
 
 using namespace BinaryNinja;
 

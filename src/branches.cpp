@@ -1,4 +1,9 @@
+#include <cstdint>
+#include <memory>
+#include <vector>
+
 #include "disasm.h"
+#include "binaryninjacore.h"
 #include "binaryninjaapi.h"
 #include "branches.h"
 

@@ -1,6 +1,4 @@
 #include <cstdint>
-#include <string>
-#include <utility>
 #include <optional>
 
 #include "disasm.h"
@@ -26,3 +24,4 @@ const char *get_reg_name(uint32_t reg) {
     }
     return sh_reg_strs[reg];
 }
+

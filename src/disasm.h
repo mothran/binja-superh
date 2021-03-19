@@ -3,8 +3,9 @@
 #include <vector>
 #include <utility>
 #include <cstdint>
+#include <optional>
 
-#include "binaryninjaapi.h"
+#include "binaryninjacore.h"
 
 enum class OpType {
     REG = 0,
